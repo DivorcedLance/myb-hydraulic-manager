@@ -7,6 +7,7 @@ import { AsignarTareaPage } from "./pages/AsignarTareaPage";
 import { RechazarReparacion } from "./pages/RechazarReparacion";
 import { ProyeccionRepuestos } from "./pages/ProyeccionRepuestos";
 import { ProjectListPage } from "./pages/ProjectListPage";
+import { RegistroProyecto } from "./pages/RegistroProyecto";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/projectList" element={<ProjectListPage />} />
           <Route path="/asignarTarea" element={<AsignarTareaPage />} />
           <Route path="/recharzarReparacion" element={<RechazarReparacion />} />
-          <Route path="*" element={<ProyeccionRepuestos />} />
+          <Route path="*" element={<RegistroProyecto />} />
         </Routes>
       </BrowserRouter>
     </>
