@@ -10,6 +10,9 @@ export function LoginPage() {
       <Link to="/projectView">
         <Button className="w-4/12">Proyecto</Button>
       </Link>
+      <Link to="/crearProyecto">
+        <Button className="w-4/12">Crear proyecto</Button>
+      </Link>
       <Link to="/proyeccionRepuestos">
         <Button className="w-4/12">Proyeccion Repuestos</Button>
       </Link>
