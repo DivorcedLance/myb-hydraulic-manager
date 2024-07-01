@@ -1,8 +1,8 @@
-import { CardDemo } from "@/components/Card";
+import { CardWithSwitch } from "@/components/CardWithSwitch";
 
 export function EmployeeCard({ employee, id, onSelect }) {
   return (
-    <CardDemo
+    <CardWithSwitch
       title={employee.name}
       icon={employee.photo}
       subtitle={employee.role}
