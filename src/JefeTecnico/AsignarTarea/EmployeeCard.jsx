@@ -1,12 +1,13 @@
 import { CardDemo } from "@/components/Card";
 
-export function EmployeeCard({ employee, id, onSelect }) {
+export function EmployeeCard({ employee, onSelect }) {
   return (
     <CardDemo
       title={employee.name}
-      icon={employee.photo}
+      image={employee.imageSrc}
+      imageAlt={employee.name}
       subtitle={employee.role}
-      onToggle={() => onSelect(id)}
+      onToggle={() => onSelect(employee.id)}
     />
   );
 }

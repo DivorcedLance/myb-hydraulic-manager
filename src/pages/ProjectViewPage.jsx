@@ -9,7 +9,7 @@ export function ProjectViewPage() {
       id: 1,
       name: 'Proyecto 1',
       clientName: 'Devenco',
-      status: 0,
+      status: 6,
       employees: [
         {
           name: 'Manchas',
@@ -32,7 +32,7 @@ export function ProjectViewPage() {
       id: 2,
       name: 'Proyecto2',
       clientName: 'Pariona SAC',
-      status: 1,
+      status: 2,
       employees: [
         {
           name: 'Sonic',
@@ -55,7 +55,7 @@ export function ProjectViewPage() {
       id: 3,
       name: 'Proyecto3',
       clientName: 'Jericó',
-      status: 2,
+      status: 3,
       employees: [
         {
           name: 'Mateo',
@@ -69,10 +69,27 @@ export function ProjectViewPage() {
         },
       ],
     },
+    {
+      id: 4,
+      name: 'Proyecto4',
+      clientName: 'Coca Cola',
+      status: 5,
+      employees: [
+        {
+          name: 'Fanta',
+          role: 'Empleado',
+          imageSrc: 'https://robohash.org/9?set=set4&size=100x100',
+        },
+        {
+          name: 'Sprite',
+          role: 'Practicante',
+          imageSrc: 'https://robohash.org/10?set=set4&size=100x100',
+        },
+      ],
+    },
   ]
 
   const [selectedProject, setSelectedProject] = useState(projects[0])
-
   return (
     <div className="flex flex-col gap-3">
       <Combobox
@@ -91,11 +108,14 @@ export function ProjectViewPage() {
         }}
         itemName={'Proyecto'}
       />
-      <ProjectView project={selectedProject} />
-      <ProjectActions project={selectedProject}/>
+      {
+        selectedProject ? (
+          <>
+            <ProjectView project={selectedProject} />
+            <ProjectActions project={selectedProject}/>
+          </>
+        ) : null
+      }
     </div>
   )
 }
-
-
-// Son 

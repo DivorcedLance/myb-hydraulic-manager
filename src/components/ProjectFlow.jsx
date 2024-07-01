@@ -10,7 +10,7 @@ export function ProjectFlow({status = 0}) {
     "Asignando pintado y embalaje",
     "Pintando y embalando",
     "Generando informe de ventas",
-    "Termindo"
+    "Terminado"
   ]
 
   return (

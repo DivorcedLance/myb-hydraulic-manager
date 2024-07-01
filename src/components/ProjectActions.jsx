@@ -1,19 +1,18 @@
-import { ProjectActionsAdmin } from "./ProjectActionsAdmin";
+import { ProjectActionsJefe } from "./ProjectActionsJefe";
 import { ProjectActionsEmployee } from "./ProjectActionsEmployee";
 import { ProjectActionsLogistic } from "./ProjectActionsLogistic";
 import { ProjectActionsSales } from "./ProjectActionsSales";
 
-export function ProjectActions({ project, role }) {
+export function ProjectActions({ project, role='Empleado' }) {
 
   return (
-    (role === 'admin') ? (
-      <ProjectActionsAdmin project={project}/>
-    ) : 
-    (role === 'empleado' || role === 'practicante') ? (
+    (project && role === 'Jefe') ? (
+      <ProjectActionsJefe project={project}/>
+    ) : (project && (role === 'Empleado' || role === 'Practicante')) ? (
       <ProjectActionsEmployee project={project}/>
-    ) : ( role === 'logistica') ? (
+    ) : (project && role === 'Logistica') ? (
       <ProjectActionsLogistic project={project}/>
-    ) : ( role === 'ventas') ? (
+    ) : (project && role === 'Ventas') ? (
       <ProjectActionsSales project={project}/>
     ) : null
   )
