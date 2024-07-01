@@ -15,11 +15,12 @@ function App() {
       <BrowserRouter basename="/myb-hydraulic-manager">
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/projectView" element={<ProjectViewPage />} />
+          <Route path="/crearProyecto" element={<RegistroProyecto />} />
           <Route path="/projectList" element={<ProjectListPage />} />
+          <Route path="/projectView" element={<ProjectViewPage />} />
+          <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
           <Route path="/asignarTarea" element={<AsignarTareaPage />} />
           <Route path="/recharzarReparacion" element={<RechazarReparacion />} />
-          <Route path="*" element={<RegistroProyecto />} />
         </Routes>
       </BrowserRouter>
     </>

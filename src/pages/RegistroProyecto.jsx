@@ -176,6 +176,9 @@ export function RegistroProyecto() {
           </Button>
         </form>
       </Form>
+      {/* //TODO: Validaciones */}
+      {/* //TODO: Boton de Cancelar */}
+      {/* //TODO: Boton de Crear Proyecto */}
     </div>
   );
 }
