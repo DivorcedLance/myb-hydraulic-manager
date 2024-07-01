@@ -19,6 +19,15 @@ export function RechazarReparacion({ proyecto, cliente }) {
     });
   };
 
+  const handleCancelar = () => {
+    //REDIRECT
+    setFields({
+      pruebas_fallidas: "",
+      detalles_sugerencias: "",
+    });
+    console.log("Cancelar");
+  };
+
   return (
     <div className="h-full flex flex-col min-w-min">
       <h1 className="text-2xl pb-6 text-left font-medium leading-none">
@@ -30,16 +39,22 @@ export function RechazarReparacion({ proyecto, cliente }) {
       <h2 className="text-lg mb-4 text-left font-medium leading-none">
         Cliente: {cliente ? cliente : "Nombre del cliente"}
       </h2>
-      <div className="flex-grow my-4" style={{ height: "60vh" }}>
+      <div className="flex-grow my-4" style={{ height: "54vh" }}>
         <FormRechazar fields={fields} onChange={handleChange} />
       </div>
 
       <div className="min-h-min my-auto">
         <Button
-          className={"w-full bg-red-800 hover:bg-red-950"}
+          className={"w-full my-1 bg-red-800 hover:bg-red-950"}
           onClick={handleRechazar}
         >
           Rechazar
+        </Button>
+        <Button
+          className={"w-full mt-1"}
+          onClick={handleCancelar}
+        >
+          Cancelar
         </Button>
       </div>
     </div>
