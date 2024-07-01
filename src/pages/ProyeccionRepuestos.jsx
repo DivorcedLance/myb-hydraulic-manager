@@ -49,7 +49,7 @@ export function ProyeccionRepuestos() {
     if (pedidos.includes(id)) {
       setPedidos(pedidos.filter((e) => e !== id));
     } else {
-      setPedidos([...selected, id]);
+      setPedidos([...pedidos, id]);
     }
   };
 
@@ -72,8 +72,24 @@ export function ProyeccionRepuestos() {
   };
 
   const handlePedir = () => {
-    console.log(pedidos);
+    setRepuestos(
+      repuestos.map((e) => {
+        const found = pedidos.find((s) => s === e.id);
+        if (found) {
+          const cantidad = selected.find((s) => s.id === e.id)?.count;
+          if (!(e.count - cantidad.count <= 0)) {
+            return {
+              ...e,
+              count: e.count - cantidad.count,
+            };
+          }
+        } else {
+          return e;
+        }
+      })
+    );
   };
+
   return (
     <div>
       <RepuestoSection
