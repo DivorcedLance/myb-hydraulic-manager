@@ -1,13 +1,11 @@
-import { Combobox } from '../components/ComboBox'
-import { useState } from 'react'
-import { ProjectView } from '@/components/ProjectView'
-import { ProjectActions } from '@/components/ProjectActions'
+import { ProjectList } from '@/components/ProjectList'
 
-export function ProjectViewPage() {
+export function ProjectListPage() {
   const projects = [
     {
       id: 1,
       name: 'Proyecto 1',
+      description: 'Este es el proyecto 1',
       clientName: 'Devenco',
       status: 6,
       employees: [
@@ -31,6 +29,7 @@ export function ProjectViewPage() {
     {
       id: 2,
       name: 'Proyecto2',
+      description: 'Este es el proyecto 2',
       clientName: 'Pariona SAC',
       status: 2,
       employees: [
@@ -54,6 +53,7 @@ export function ProjectViewPage() {
     {
       id: 3,
       name: 'Proyecto3',
+      description: 'Este es el proyecto 3',
       clientName: 'Jericó',
       status: 3,
       employees: [
@@ -72,6 +72,7 @@ export function ProjectViewPage() {
     {
       id: 4,
       name: 'Proyecto4',
+      description: 'Este es el proyecto 4',
       clientName: 'Coca Cola',
       status: 5,
       employees: [
@@ -88,34 +89,9 @@ export function ProjectViewPage() {
       ],
     },
   ]
-
-  const [selectedProject, setSelectedProject] = useState(projects[0])
   return (
-    <div className="flex flex-col gap-3">
-      <Combobox
-        items={projects}
-        getValue={(p) => {
-          return p ? p.id : null;
-        }}
-        getLabel={(p) => {
-          return p ? p.name : null;
-        }}
-        getRealValue={(p) => {
-          return p
-        }}
-        onSelection={(p) => {
-          setSelectedProject(p)
-        }}
-        itemName={'Proyecto'}
-      />
-      {
-        selectedProject ? (
-          <>
-            <ProjectView project={selectedProject} />
-            <ProjectActions project={selectedProject}/>
-          </>
-        ) : null
-      }
+    <div>
+      <ProjectList projects={projects}/>
     </div>
   )
 }

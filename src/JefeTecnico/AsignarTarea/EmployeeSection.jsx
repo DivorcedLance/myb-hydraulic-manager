@@ -3,13 +3,11 @@ import { EmployeeCard } from "./EmployeeCard";
 export function EmployeeSection({ employees, handleSelect }) {
   return (
     <div className="grid grid-cols-3 gap-4">
-      {employees.map((e, i) => {
+      {employees.map((employee) => {
         return (
-          <div className="min-w-80">
+          <div key={employee.id} className="min-w-80">
             <EmployeeCard
-              key={e.name}
-              employee={e}
-              id={i}
+              employee={employee}
               onSelect={handleSelect}
             />
           </div>
