@@ -2,7 +2,7 @@ import { CardWithCounter } from "@/components/CardWithCounter";
 import { Button } from "@/components/ui/button";
 import { Fragment } from "react";
 
-export default function ListaRepuestos({ added }) {
+export default function ListaRepuestos({ added, onDelete }) {
   return (
     <div className="mx-3 overflow-y-auto" style={{ height: "40vh" }}>
       {added.length === 0 ? (
@@ -18,7 +18,14 @@ export default function ListaRepuestos({ added }) {
                 imageAlt={item.name}
               />
             </div>
-            <Button className="col-span-1 my-auto">Eliminar</Button>
+            <Button
+              className="col-span-1 my-auto"
+              onClick={() => {
+                onDelete(item.id);
+              }}
+            >
+              Eliminar
+            </Button>
           </div>
         ))
       )}
