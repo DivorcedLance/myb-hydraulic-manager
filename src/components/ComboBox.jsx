@@ -47,7 +47,7 @@ export function Combobox({ items, getValue, getLabel, getRealValue, itemName, on
                   onSelect={(currentValue) => {
                     setValue(currentValue)
                     setOpen(false)
-                    if (onSelection && value) {
+                    if (onSelection) {
                       onSelection(getRealValue(item))
                     }
                   }}
