@@ -11,7 +11,7 @@ import { ProjectListPage } from "./pages/ProjectListPage";
 function App() {
   return (
     <>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/myb-hydraulic-manager">
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/projectView" element={<ProjectViewPage />} />
