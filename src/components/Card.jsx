@@ -2,7 +2,7 @@ import { CardContent } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { PictureCard } from "./PictureCard";
 
-export function CardDemo({ onToggle, title, subtitle, image, imageAlt, children }) {
+export function CardDemo({ title, subtitle, image, imageAlt, children }) {
 
   return (
     <CardContent className="grid gap-4">

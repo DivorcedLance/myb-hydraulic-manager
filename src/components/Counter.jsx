@@ -1,6 +1,7 @@
 import { Input } from "@/components/ui/input";
 
 export function Counter({ initValue, onChange, id }) {
+  
   return (
     <Input
       id={id}

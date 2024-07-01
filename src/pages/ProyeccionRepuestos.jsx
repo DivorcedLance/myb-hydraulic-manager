@@ -28,12 +28,6 @@ const reps = [
 export function ProyeccionRepuestos() {
   const [repuestos, setRepuestos] = useState(reps);
 
-  /*
-    {
-        id, count
-    }
-  */
-
   const [selected, setSelected] = useState(
     reps.map((e) => {
       return {
