@@ -3,7 +3,7 @@ import { ProjectActionsEmployee } from "./ProjectActionsEmployee";
 import { ProjectActionsLogistic } from "./ProjectActionsLogistic";
 import { ProjectActionsSales } from "./ProjectActionsSales";
 
-export function ProjectActions({ project, role='Empleado' }) {
+export function ProjectActions({ project, role='Ventas' }) {
 
   return (
     (project && role === 'Jefe') ? (
