@@ -73,6 +73,9 @@ export function RegistroProyecto() {
         Proforma Reparacion
       </h1>
       <Input title="proforma" type="file" id="total" />
+      {/* //TODO: Validaciones */}
+      {/* //TODO: Boton de Cancelar */}
+      {/* //TODO: Boton de Crear Proyecto */}
     </div>
   );
 }

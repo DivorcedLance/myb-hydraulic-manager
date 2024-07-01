@@ -37,7 +37,6 @@ export function ProjectActionsJefe({ project }) {
               <Button className="w-full">Registrar Informe De Ventas</Button>
             </Link>
           </div>
-          <Button>Rechazar Reparación</Button>
         </div>
       ) : null
   )
