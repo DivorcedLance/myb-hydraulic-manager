@@ -167,15 +167,22 @@ export function RegistroProyecto() {
           >
             Proforma Reparacion
           </h1>
+          <FormLabel
+            htmlFor="proforma"
+            className={`${manualError[0] && "text-red-600"}`}
+          >
+            Añadir proforma
+          </FormLabel>
           <Input type="file" onChange={handleAddProforma} />
           {manualError[2] && (
             <span className="text-red-600">Deba añadir una proforma</span>
           )}
           <Button className="w-full mt-2" type="submit">
-            Enviar
+            Crear Proyecto
           </Button>
         </form>
       </Form>
+      <Button className="w-full mt-2 bg-red-700">Cancelar</Button>
       {/* //TODO: Validaciones */}
       {/* //TODO: Boton de Cancelar */}
       {/* //TODO: Boton de Crear Proyecto */}

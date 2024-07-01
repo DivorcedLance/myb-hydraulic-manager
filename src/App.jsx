@@ -21,6 +21,7 @@ function App() {
           <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
           <Route path="/asignarTarea" element={<AsignarTareaPage />} />
           <Route path="/recharzarReparacion" element={<RechazarReparacion />} />
+          <Route path="/registrarProyecto" element={<RegistroProyecto />} />
         </Routes>
       </BrowserRouter>
     </>
