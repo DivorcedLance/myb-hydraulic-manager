@@ -17,9 +17,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function Combobox({items}) {
+export function Combobox({ items, getValue, getLabel, getRealValue, itemName, onSelection }) {
   const [open, setOpen] = useState(false)
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState(null)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -30,32 +30,33 @@ export function Combobox({items}) {
           aria-expanded={open}
           className="w-[200px] justify-between"
         >
-          {value
-            ? items.find((item) => item.value === value)?.label
-            : "Select framework..."}
+          {value ? getLabel(items.find((item) => getLabel(item) === value)) : `Seleccionar ${itemName}`}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
+          <CommandInput placeholder={`Buscar ${itemName}...`} className="h-9" />
           <CommandList>
-            <CommandEmpty>No item found</CommandEmpty>
+            <CommandEmpty>No encontrado</CommandEmpty>
             <CommandGroup>
               {items.map((item) => (
                 <CommandItem
-                  key={item.value}
-                  value={item.value}
+                  key={getValue(item)}
+                  value={getValue(item)}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
+                    setValue(currentValue)
                     setOpen(false)
+                    if (onSelection) {
+                      onSelection(getRealValue(item))
+                    }
                   }}
                 >
-                  {item.label}
+                  {getLabel(item)}
                   <CheckIcon
                     className={cn(
                       "ml-auto h-4 w-4",
-                      value === item.value ? "opacity-100" : "opacity-0"
+                      getValue(value) === getValue(item) ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>
