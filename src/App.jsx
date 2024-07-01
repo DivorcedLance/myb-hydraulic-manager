@@ -2,7 +2,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { LoginPage } from './pages/LoginPage'
-import { ProyectViewPage } from './pages/ProyectViewPage'
+import { ProjectViewPage } from './pages/ProjectViewPage'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/proyectView" element={<ProyectViewPage />} />
+          <Route path="/projectView" element={<ProjectViewPage />} />
         </Routes>
       </BrowserRouter>
     </>
