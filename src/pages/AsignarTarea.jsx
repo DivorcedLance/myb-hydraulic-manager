@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EmployeeSection } from "./EmployeeSection";
+import { EmployeeSection } from "../JefeTecnico/AsignarTarea/EmployeeSection";
 import { Button } from "@/components/ui/button";
 
 export function AsignarTarea() {
