@@ -1,4 +1,3 @@
-import { CardWithCounter } from "@/components/CardWithCounter";
 import { Button } from "@/components/ui/button";
 import { CardDemo } from "@/components/Card";
 import { Counter } from "@/components/Counter";
