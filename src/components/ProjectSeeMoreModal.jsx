@@ -9,7 +9,6 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { useState } from 'react'
-import { PictureCard } from './PictureCard'
 import { ReplacementList } from './ReplacementList'
 import { DocumentList } from './DocumentList'
 import { ProjectHeader } from './ProjectHeader'

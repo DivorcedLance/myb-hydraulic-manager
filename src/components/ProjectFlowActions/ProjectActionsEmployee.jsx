@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { FileInput } from "../FileInput";
+import { FileInputModal } from "../FileInputModal";
 import { Button } from "../ui/button";
 
 export function ProjectActionsEmployee({ project }) {
@@ -8,16 +7,10 @@ export function ProjectActionsEmployee({ project }) {
     (project.status == 2) ? (
       <div className="flex justify-around w-full items-center">
         <div className="flex flex-col">
-          <FileInput fileName="Reporte"/>
-          <Link to="/aprobarReparacion">
-            <Button className="w-full">Enviar Reportes</Button>
-          </Link>
+          <FileInputModal fileName="Reporte"/>
         </div>
         <div className="flex flex-col">
-          <FileInput fileName="Informe de Pruebas"/>
-          <Link to="/aprobarReparacion">
-            <Button className="w-full">Registrar Pruebas</Button>
-          </Link>
+          <FileInputModal fileName="Informe de Pruebas"/>
         </div>
       </div>
     ) : (project.status == 3) ? (

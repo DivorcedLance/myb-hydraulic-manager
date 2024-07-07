@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "../ui/button"
-import { FileInput } from "../FileInput"
+import { FileInputModal } from "../FileInputModal"
 import { ReplacementsModal } from "../ReplacementsModal"
 
 export function ProjectActionsJefe({ project }) {
@@ -25,7 +25,7 @@ export function ProjectActionsJefe({ project }) {
         </div>
       ) : (project.status == 4) ? (
         <div>
-          <FileInput fileName="Informe de Control de Calidad"/>
+          <FileInputModal fileName="Informe de Control de Calidad"/>
         </div>
       ) : (project.status == 5) ? (
         <div>
@@ -35,7 +35,7 @@ export function ProjectActionsJefe({ project }) {
         </div>
       ) : (project.status == 7) ? (
         <div className="flex justify-around w-full items-center">
-          <FileInput fileName="Informe de Ventas"/>
+          <FileInputModal fileName="Informe de Ventas"/>
         </div>
       ) : null
   )

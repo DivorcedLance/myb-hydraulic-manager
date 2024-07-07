@@ -1,6 +1,5 @@
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
 
 export function TextareaWithLabel({ title, value, onChange, placeholder, id }) {
   return (

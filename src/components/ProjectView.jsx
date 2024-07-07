@@ -1,4 +1,4 @@
-import { ProjectFlow } from '@/components/ProjectFLow/ProjectFlow'
+import { ProjectFlow } from '@/components/ProjectFlow/ProjectFlow'
 import { ProjectHeader } from '@/components/ProjectHeader'
 import { ProjectActions } from './ProjectFlowActions/ProjectActions'
 

@@ -46,7 +46,7 @@ export function ProjectViewPage() {
           itemName={'Proyecto'}
         />
         <Combobox
-          items={['Empleado', 'Jefe', 'Ventas', 'Logistica']}
+          items={['Empleado', 'Jefe', 'Ventas']}
           getValue={(r) => r}
           getLabel={(r) => r}
           getRealValue={(r) => r}
