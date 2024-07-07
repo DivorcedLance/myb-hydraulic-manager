@@ -56,24 +56,24 @@
     "documents": [
       {
         "id": 1,  
-        "name": "doc1.pdf",
-        "description": "Manual de usuario de la bomba hidráulica",
+        "name": "Guia de pruebas1.pdf",
+        "description": "Guía de pruebas de diagnóstico de aislamiento a voltajes superiores a 1 kV",
         "url":
-          "/myb-hydraulic-manager/doc1.pdf"
+          "/myb-hydraulic-manager/Guia de pruebas.pdf"
       },
       {
         "id": 2,
-        "name": "Manual de instalación",
-        "description": "Manual de instalación de la bomba hidráulica",
+        "name": "Guia de pruebas2.pdf",
+        "description": "Guía de pruebas de diagnóstico de aislamiento a voltajes superiores a 1 kV",
         "url":
-          "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png"
+          "/myb-hydraulic-manager/Guia de pruebas.pdf"
       },
       {
         "id": 3,
-        "name": "Manual de mantenimiento",
-        "description": "Manual de mantenimiento de la bomba hidráulica",
+        "name": "Guia de pruebas3.pdf",
+        "description": "Guía de pruebas de diagnóstico de aislamiento a voltajes superiores a 1 kV",
         "url":
-          "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png"
+          "/myb-hydraulic-manager/Guia de pruebas.pdf"
       }
     ]
   },
