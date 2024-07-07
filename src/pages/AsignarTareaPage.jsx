@@ -1,82 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EmployeeSection } from "../JefeTecnico/AsignarTarea/EmployeeSection";
 import { Button } from "@/components/ui/button";
 
 export function AsignarTareaPage() {
-  const [employees, setEmployees] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      role: "Practicante",
-      imageSrc: "https://robohash.org/21?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      role: "Empleado",
-      imageSrc: "https://robohash.org/22?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 3,
-      name: "James Doe",
-      role: "Logística",
-      imageSrc: "https://robohash.org/23?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 4,
-      name: "John Doe",
-      role: "Jefe",
-      imageSrc: "https://robohash.org/24?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 5,
-      name: "Jane Doe",
-      role: "Ventas",
-      imageSrc: "https://robohash.org/25?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 6,
-      name: "James Doe",
-      role: "Practicante",
-      imageSrc: "https://robohash.org/26?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 7,
-      name: "John Doe",
-      role: "Practicante",
-      imageSrc: "https://robohash.org/27?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 8,
-      name: "Jane Doe",
-      role: "Practicante",
-      imageSrc: "https://robohash.org/28?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-    {
-      id: 9,
-      name: "James Doe",
-      role: "Practicante",
-      imageSrc: "https://robohash.org/29?set=set4&size=100x100",
-      projectID: null,
-      status: "Disponible",
-    },
-  ]);
+
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    fetch('/myb-hydraulic-manager/employees.json')
+      .then(response => response.json())
+      .then(data => setEmployees(data))
+      .catch(error => console.error('Error loading the projects:', error));
+  }, []);
 
   const [selected, setSelected] = useState([]);
 

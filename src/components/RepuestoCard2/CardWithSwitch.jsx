@@ -1,10 +1,10 @@
 import { Switch } from "../ui/switch";
-import { Card } from "../Card";
+import { CardDemo } from "../Card";
 
-export function CardWithSwitch({ onToggle, id, ...props }) {
+export function CardWithSwitch({ onToggle, ...props }) {
   return (
-    <Card {...props}>
+    <CardDemo {...props}>
       <Switch onClick={onToggle} />
-    </Card>
+    </CardDemo>
   );
 }

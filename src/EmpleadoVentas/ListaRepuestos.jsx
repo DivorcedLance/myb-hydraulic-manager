@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import { CardWithCounter } from "@/components/RepuestoCard2/CardWithCounter";
-import { Button } from "@/components/ui/button";
-=======
 import { Button } from "@/components/ui/button";
 import { CardDemo } from "@/components/Card";
-import { Counter } from "@/components/Counter";
->>>>>>> e694b5cf1364358c752687a3951104404820b449
+import { Counter } from "@/components/RepuestoCard2/Counter";
 
 export default function ListaRepuestos({ added, onDelete, onEdit }) {
   return (

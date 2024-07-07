@@ -7,44 +7,28 @@ const reps = [
     id: 1,
     name: "Llanta",
     descripcion: "Llanta para auto",
-<<<<<<< HEAD
     imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
     count: 4,
-=======
-    imgSrc: "https://robohash.org/1?set=set4&size=100x100",
-    quantity: 0,
->>>>>>> e694b5cf1364358c752687a3951104404820b449
   },
   {
     id: 2,
     name: "Aceite",
     descripcion: "Aceite para motor",
-<<<<<<< HEAD
     imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
     count: 6,
-=======
-    imgSrc: "https://robohash.org/2?set=set4&size=100x100",
-    quantity: 0,
->>>>>>> e694b5cf1364358c752687a3951104404820b449
   },
   {
     id: 3,
     name: "Filtro de aire",
     descripcion: "Filtro de aire para motor",
-<<<<<<< HEAD
     imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
     count: 9,
-=======
-    imgSrc: "https://robohash.org/3?set=set4&size=100x100",
-    quantity: 0,
->>>>>>> e694b5cf1364358c752687a3951104404820b449
   },
 ];
 
 export function ProyeccionRepuestos() {
   //Repuestos con la cantidad recomendada por ventas
   const [repuestos, setRepuestos] = useState(reps);
-<<<<<<< HEAD
   const [selected, setSelected] = useState(
     reps.map((e) => {
       return {
@@ -53,12 +37,6 @@ export function ProyeccionRepuestos() {
       };
     })
   );
-
-  const [pedidos, setPedidos] = useState([]);
-
-=======
-  //Repuestos seleccionados por el jefe tecnico
-  const [selected, setSelected] = useState([]);
 
   //Modificar la cantidad de un repuesto
   const handleModify = (e) => {
@@ -69,8 +47,8 @@ export function ProyeccionRepuestos() {
       prev.map((item) => (item.id === id ? { ...item, quantity: value } : item))
     );
   };
+
   //Seleccionar un repuesto
->>>>>>> e694b5cf1364358c752687a3951104404820b449
   const handleSelect = (id) => {
     if (selected.includes(id)) {
       setSelected((prev) => prev.filter((item) => item !== id));

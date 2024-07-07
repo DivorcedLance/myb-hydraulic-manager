@@ -1,4 +1,4 @@
-import { Card } from "@/components/Card";
+import { CardDemo } from "@/components/Card";
 import { Modal } from "@/components/Modal";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ export function StockRepuestos({ stock, onAdd, onSelected, isOpen, onClose }) {
       </h1>
       <div className="overflow-auto" style={{ height: "70vh" }}>
         {stock.map((repuesto) => (
-          <Card
+          <CardDemo
             key={repuesto.id}
             title={repuesto.name}
             subtitle={repuesto.description}
@@ -24,7 +24,7 @@ export function StockRepuestos({ stock, onAdd, onSelected, isOpen, onClose }) {
                 onSelected(repuesto.id);
               }}
             />
-          </Card>
+          </CardDemo>
         ))}
       </div>
       <Button className="w-full mt-2" onClick={onAdd} type="button">
