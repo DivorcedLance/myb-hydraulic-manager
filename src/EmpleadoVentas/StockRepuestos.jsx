@@ -27,7 +27,7 @@ export function StockRepuestos({ stock, onAdd, onSelected, isOpen, onClose }) {
           </Card>
         ))}
       </div>
-      <Button className="w-full mt-2" onClick={onAdd}>
+      <Button className="w-full mt-2" onClick={onAdd} type="button">
         Agregar
       </Button>
     </Modal>
