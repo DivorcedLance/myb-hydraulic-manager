@@ -56,10 +56,10 @@
     "documents": [
       {
         "id": 1,  
-        "name": "Manual de usuario",
+        "name": "doc1.pdf",
         "description": "Manual de usuario de la bomba hidráulica",
         "url":
-          "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png"
+          "/myb-hydraulic-manager/doc1.pdf"
       },
       {
         "id": 2,
