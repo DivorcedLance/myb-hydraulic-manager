@@ -52,6 +52,29 @@
           "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
         "amountNeeded": 3
       }
+    ],
+    "documents": [
+      {
+        "id": 1,  
+        "name": "Manual de usuario",
+        "description": "Manual de usuario de la bomba hidráulica",
+        "url":
+          "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png"
+      },
+      {
+        "id": 2,
+        "name": "Manual de instalación",
+        "description": "Manual de instalación de la bomba hidráulica",
+        "url":
+          "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png"
+      },
+      {
+        "id": 3,
+        "name": "Manual de mantenimiento",
+        "description": "Manual de mantenimiento de la bomba hidráulica",
+        "url":
+          "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png"
+      }
     ]
   },
   {
