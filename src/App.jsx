@@ -9,6 +9,7 @@ import { ProyeccionRepuestos } from "./pages/ProyeccionRepuestos";
 import { ProjectListPage } from "./pages/ProjectListPage";
 import { RegistroProyecto } from "./pages/RegistroProyecto";
 import { TestPage } from "./components/test/TestPage";
+import { CloseProjectListPage } from "./pages/CloseProjectListPage";
 
 function App() {
   return (
@@ -16,13 +17,13 @@ function App() {
       <BrowserRouter basename="/myb-hydraulic-manager">
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/crearProyecto" element={<RegistroProyecto />} />
+          <Route path="/createProject" element={<RegistroProyecto />} />
           <Route path="/projectList" element={<ProjectListPage />} />
           <Route path="/projectView" element={<ProjectViewPage />} />
-          <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
           <Route path="/asignarTarea" element={<AsignarTareaPage />} />
           <Route path="/recharzarReparacion" element={<RechazarReparacion />} />
-          <Route path="/registrarProyecto" element={<RegistroProyecto />} />
+          <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
+          <Route path="/closeProject" element={<CloseProjectListPage />} />
           <Route path="/test" element={<TestPage />} />
         </Routes>
       </BrowserRouter>
