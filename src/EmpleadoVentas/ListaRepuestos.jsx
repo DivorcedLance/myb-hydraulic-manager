@@ -4,7 +4,7 @@ import { Counter } from "@/components/RepuestoCard2/Counter";
 
 export default function ListaRepuestos({ added, onDelete, onEdit }) {
   return (
-    <div className="mx-3 overflow-y-auto" style={{ height: "40vh" }}>
+    <div className="mx-3 overflow-y-auto" style={{ height: "40h" }}>
       {added.length === 0 ? (
         <p>No hay repuestos añadidos</p>
       ) : (

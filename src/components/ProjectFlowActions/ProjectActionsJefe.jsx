@@ -16,14 +16,12 @@ export function ProjectActionsJefe({ project }) {
         </div>
       ) : (project.status == 3) ? (
         <div className="flex justify-around w-full items-center">
-          <div className="flex flex-col">
-            <Link to="/aprobarReparacion">
-              <Button className="w-full">Aprobar Reparación</Button>
+          <div className="flex flex-row gap-4">
+            <Button className="w-full bg-green-600">Aprobar Reparación</Button>
+            <Link to="/recharzarReparacion">
+              <Button className="w-full bg-red-700">Rechazar Reparación</Button>
             </Link>
           </div>
-          <Link to="/recharzarReparacion">
-            <Button className="w-full">Rechazar Reparación</Button>
-          </Link>
         </div>
       ) : (project.status == 4) ? (
         <div>

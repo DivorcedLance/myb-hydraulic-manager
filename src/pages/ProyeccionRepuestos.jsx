@@ -1,6 +1,7 @@
 import { RepuestoSection } from "@/JefeTecnico/ProyeccionRespuestos/RepuestoSection";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const reps = [
   {
@@ -38,6 +39,9 @@ export function ProyeccionRepuestos() {
     })
   );
 
+  const navigate = useNavigate();
+
+
   //Modificar la cantidad de un repuesto
   const handleModify = (e) => {
     const id = Number(e.target.id);
@@ -68,6 +72,7 @@ export function ProyeccionRepuestos() {
     console.log("Cancelar");
     setSelected([]);
     setRepuestos((prev) => prev.map((item) => ({ ...item, quantity: 0 })));
+    navigate("/");
   };
 
   return (

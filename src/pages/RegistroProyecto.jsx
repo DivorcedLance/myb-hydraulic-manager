@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import { FormLabel } from "@/components/ui/form";
 import { FormProyecto } from "@/EmpleadoVentas/FormProyecto";
+import { useNavigate } from "react-router-dom";
 
 const repuestosDB = [
   {
@@ -72,6 +73,8 @@ export function RegistroProyecto() {
   //Errores en datos del proyecto no controlados por el hook-form
   const [manualError, setManualError] = useState([false, false, false]);
   // 0 -> added, 1 --> descripcion, 2 --> proforma
+
+  const navigate = useNavigate();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -164,6 +167,7 @@ export function RegistroProyecto() {
     setDescripcion("");
     setProforma(null);
     setManualError([false, false, false]);
+    navigate("/");
   };
 
   return (

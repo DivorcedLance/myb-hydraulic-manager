@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { ProjectHeader } from "./ProjectHeader";
 import { Card, CardDescription } from "./ui/card";
 
-
 export function ProjectList({ projects }) {
 
   const navigate = useNavigate();
@@ -14,9 +13,7 @@ export function ProjectList({ projects }) {
           navigate("/projectView")
         }}>
           <ProjectHeader
-            name={project.name}
-            clientName={project.clientName}
-            employees={project.employees}
+            project={project}
           />
           <CardDescription>
             {project.description}

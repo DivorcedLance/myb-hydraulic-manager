@@ -1,8 +1,12 @@
 import { FormRechazar } from "@/JefeTecnico/RechazarReparacion/FormRechazar";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function RechazarReparacion({ proyecto, cliente }) {
+
+  const navigate = useNavigate();
+
   const [fields, setFields] = useState({
     pruebas_fallidas: "",
     detalles_sugerencias: "",
@@ -17,15 +21,15 @@ export function RechazarReparacion({ proyecto, cliente }) {
       pruebas_fallidas: "",
       detalles_sugerencias: "",
     });
+    navigate("/projectView/");
   };
 
   const handleCancelar = () => {
-    //REDIRECT
     setFields({
       pruebas_fallidas: "",
       detalles_sugerencias: "",
     });
-    console.log("Cancelar");
+    navigate("/projectView/");
   };
 
   return (

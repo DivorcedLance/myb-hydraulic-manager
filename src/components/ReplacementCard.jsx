@@ -18,7 +18,7 @@ export function ReplacementCard({
         </div>
       </div>
       <div className='flex flex-col justify-self-end gap-2 px-3'>
-        <p className='text-4xl font-extralight'>{currentAmount}/{totalAmount}</p>
+        <p className='text-4xl font-extralight'>{currentAmount}{totalAmount&&`/${totalAmount}`}</p>
       </div>
     </div>
   )

@@ -1,18 +1,18 @@
 import { PictureCard } from './PictureCard'
-import { Button } from './ui/button'
+import { ProjectSeeMoreModal } from './ProjectSeeMoreModal'
 
-export function ProjectHeader({ name, clientName, employees }) {
+export function ProjectHeader({ project, showSeeMore = true}) {
   return (
     <div className="flex flex-row justify-between items-center">
       <div className="flex flex-col gap-4 items-start">
-        <h1 className="font-bold text-4xl">{name}</h1>
+        <h1 className="font-bold text-4xl">{project.name}</h1>
         <div>
-          <h4 className="text-xl">{clientName}</h4>
-          <Button className="w-full">Ver más</Button>
+          <h4 className="text-xl">{project.clientName}</h4>
+          { showSeeMore && <ProjectSeeMoreModal project={project} /> }
         </div>
       </div>
       <div className="flex gap-2">
-        {employees.map((employee) => (
+        {project.employees.map((employee) => (
           <PictureCard
             key={employee.name}
             name={employee.name}
