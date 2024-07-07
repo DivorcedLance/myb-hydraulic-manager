@@ -1,4 +1,4 @@
-import { CardWithSwitch } from "@/components/CardWithSwitch";
+import { CardWithSwitch } from "@/components/RepuestoCard2/CardWithSwitch";
 
 export function EmployeeCard({ employee, onSelect }) {
   return (

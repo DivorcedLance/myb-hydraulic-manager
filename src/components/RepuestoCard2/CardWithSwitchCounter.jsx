@@ -1,5 +1,5 @@
-import { Switch } from "./ui/switch";
-import { CardDemo } from "./Card";
+import { Switch } from "../ui/switch";
+import { Card } from "../Card";
 import { Counter } from "./Counter";
 
 export function CardWithSwitchCounter({
@@ -9,9 +9,9 @@ export function CardWithSwitchCounter({
   ...props
 }) {
   return (
-    <CardDemo {...props}>
+    <Card {...props}>
       <Counter initValue={countervalue} onChange={onChange} />
       <Switch onClick={onToggle} />
-    </CardDemo>
+    </Card>
   );
 }

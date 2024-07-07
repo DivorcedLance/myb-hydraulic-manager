@@ -8,6 +8,7 @@ import { RechazarReparacion } from "./pages/RechazarReparacion";
 import { ProyeccionRepuestos } from "./pages/ProyeccionRepuestos";
 import { ProjectListPage } from "./pages/ProjectListPage";
 import { RegistroProyecto } from "./pages/RegistroProyecto";
+import { TestPage } from "./components/test/TestPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
           <Route path="/asignarTarea" element={<AsignarTareaPage />} />
           <Route path="/recharzarReparacion" element={<RechazarReparacion />} />
+          <Route path="/test" element={<TestPage />} />
         </Routes>
       </BrowserRouter>
     </>

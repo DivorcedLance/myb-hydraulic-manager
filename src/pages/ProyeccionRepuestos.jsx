@@ -6,34 +6,27 @@ const reps = [
     id: 1,
     name: "Llanta",
     descripcion: "Llanta para auto",
-    imgSrc: "https://via.placeholder.com/150",
+    imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
     count: 4,
   },
   {
     id: 2,
     name: "Aceite",
     descripcion: "Aceite para motor",
-    imgSrc: "https://via.placeholder.com/150",
+    imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
     count: 6,
   },
   {
     id: 3,
     name: "Filtro de aire",
     descripcion: "Filtro de aire para motor",
-    imgSrc: "https://via.placeholder.com/150",
+    imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
     count: 9,
   },
 ];
 
 export function ProyeccionRepuestos() {
   const [repuestos, setRepuestos] = useState(reps);
-
-  /*
-    {
-        id, count
-    }
-  */
-
   const [selected, setSelected] = useState(
     reps.map((e) => {
       return {

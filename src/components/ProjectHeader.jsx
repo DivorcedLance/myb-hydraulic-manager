@@ -1,7 +1,7 @@
 import { PictureCard } from './PictureCard'
 import { Button } from './ui/button'
 
-export function ProjectHead({ name, clientName, employees }) {
+export function ProjectHeader({ name, clientName, employees }) {
   return (
     <div className="flex flex-row justify-between items-center">
       <div className="flex flex-col gap-4 items-start">

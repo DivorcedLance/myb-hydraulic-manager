@@ -8,6 +8,7 @@ export function Counter({ initValue, onChange, id }) {
       onChange={onChange}
       type="number"
       placeholder="0"
+      className="w-12"
     />
   );
 }

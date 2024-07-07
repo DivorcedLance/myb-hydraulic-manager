@@ -1,4 +1,4 @@
-import { CardDemo } from "./Card";
+import { Card } from "../Card";
 import { Counter } from "./Counter";
 
 export function CardWithCounter({
@@ -7,8 +7,8 @@ export function CardWithCounter({
   ...props
 }) {
   return (
-    <CardDemo {...props}>
+    <Card {...props}>
       <Counter initValue={countervalue} onChange={onChange} />
-    </CardDemo>
+    </Card>
   );
 }

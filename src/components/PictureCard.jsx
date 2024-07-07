@@ -1,10 +1,10 @@
-export function PictureCard({imageSrc, name}) {
+export function PictureCard({imageSrc, name, ...props}) {
   return (
     <div
       key={name}
-      className="flex flex-col items-center border-black border-2"
+      className={`h-full flex flex-col justify-center items-center ${props.className}`}
     >
-      <img src={imageSrc} alt={name} />
+      <img src={imageSrc} alt={name} className="h-full w-auto object-contain"/>
     </div>
   )
 }

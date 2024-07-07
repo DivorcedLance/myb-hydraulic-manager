@@ -1,20 +1,22 @@
 import { Link } from "react-router-dom"
-import { Button } from "./ui/button"
-import { FileInput } from "./FileInput"
+import { Button } from "../ui/button"
+import { FileInput } from "../FileInput"
+import { ReplacementsModal } from "../ReplacementsModal"
 
 export function ProjectActionsJefe({ project }) {
 
   return (
       (project.status == 0) ? (
+        <ReplacementsModal replacements={project.replacements}/>
+      ) : (project.status == 1) ? (
         <div>
           <Link to="/asignarTarea">
             <Button className="w-full">Asignar Tarea de Reparación</Button>
           </Link>
         </div>
-      ) : (project.status == 2) ? (
+      ) : (project.status == 3) ? (
         <div className="flex justify-around w-full items-center">
           <div className="flex flex-col">
-            <FileInput fileName="Informe de Control de Calidad"/>
             <Link to="/aprobarReparacion">
               <Button className="w-full">Aprobar Reparación</Button>
             </Link>
@@ -23,20 +25,19 @@ export function ProjectActionsJefe({ project }) {
             <Button className="w-full">Rechazar Reparación</Button>
           </Link>
         </div>
-      ) : (project.status == 3) ? (
+      ) : (project.status == 4) ? (
+        <div>
+          <FileInput fileName="Informe de Control de Calidad"/>
+        </div>
+      ) : (project.status == 5) ? (
         <div>
           <Link to="/asignarTarea">
             <Button className="w-full">Asignar Tarea de Pintado y Embalaje</Button>
           </Link>
         </div>
-      ) : (project.status == 5) ? (
+      ) : (project.status == 7) ? (
         <div className="flex justify-around w-full items-center">
-          <div className="flex flex-col">
-            <FileInput fileName="Informe de Ventas"/>
-            <Link to="/registrarInformeDeVentas">
-              <Button className="w-full">Registrar Informe De Ventas</Button>
-            </Link>
-          </div>
+          <FileInput fileName="Informe de Ventas"/>
         </div>
       ) : null
   )

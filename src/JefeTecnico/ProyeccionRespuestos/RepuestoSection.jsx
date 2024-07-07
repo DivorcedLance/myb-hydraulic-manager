@@ -14,10 +14,10 @@ export function RepuestoSection({
           id={repuesto.id}
           title={repuesto.name}
           subtitle={repuesto.descripcion}
-          icon={repuesto.imgSrc}
           cantidad={cantidades.find((e) => e.id === repuesto.id)?.count}
           onChange={onChange}
           onSelected={onSelected}
+          imageAlt={repuesto.imgSrc}
         />
       ))}
     </div>

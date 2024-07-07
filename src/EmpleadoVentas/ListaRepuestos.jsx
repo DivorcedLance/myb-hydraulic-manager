@@ -1,6 +1,5 @@
-import { CardWithCounter } from "@/components/CardWithCounter";
+import { CardWithCounter } from "@/components/RepuestoCard2/CardWithCounter";
 import { Button } from "@/components/ui/button";
-import { Fragment } from "react";
 
 export default function ListaRepuestos({ added }) {
   return (

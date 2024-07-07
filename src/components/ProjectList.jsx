@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ProjectHead } from "./ProjectHead";
+import { ProjectHeader } from "./ProjectHeader";
 import { Card, CardDescription } from "./ui/card";
 
 
@@ -13,7 +13,7 @@ export function ProjectList({ projects }) {
         <Card key={project.id} className="p-4 border-4 border-black" onClick={()=>{
           navigate("/projectView")
         }}>
-          <ProjectHead
+          <ProjectHeader
             name={project.name}
             clientName={project.clientName}
             employees={project.employees}

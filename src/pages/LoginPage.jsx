@@ -16,6 +16,9 @@ export function LoginPage() {
       <Link to="/proyeccionRepuestos">
         <Button className="w-4/12">Proyeccion Repuestos</Button>
       </Link>
+      <Link to="/test">
+        <Button className="w-4/12">Test</Button>
+      </Link>
     </div>
 
   )
