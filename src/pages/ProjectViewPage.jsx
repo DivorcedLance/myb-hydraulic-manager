@@ -1,4 +1,3 @@
-import { Combobox } from '../components/ComboBox'
 import { ProjectView } from '@/components/ProjectView'
 import { ProjectActions } from '@/components/ProjectFlowActions/ProjectActions'
 import { useEffect, useState } from 'react';
@@ -26,18 +25,6 @@ export function ProjectViewPage() {
 
   return (
     <div className="flex flex-col gap-3">
-      {/* <div className="text-2xl font-bold flex items-start">
-        <Combobox
-          items={['Empleado', 'Jefe', 'Ventas']}
-          getValue={(r) => r}
-          getLabel={(r) => r}
-          getRealValue={(r) => r}
-          onSelection={(r) => {
-            setRole(r)
-          }}
-          itemName={'Rol'}
-        />
-      </div> */}
       {
         selectedProject ? (
           <>
