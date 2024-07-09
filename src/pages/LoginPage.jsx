@@ -1,6 +1,7 @@
 import { Combobox } from "@/components/ComboBox";
 import { Button } from "@/components/ui/button";
 import useStore from "@/store/useStore";
+import TecnicoView from "@/Tecnico/TecnicoView";
 import { Link } from "react-router-dom";
 
 export function LoginPage() {
@@ -20,11 +21,7 @@ export function LoginPage() {
           itemName={"Rol"}
         />
       </div>
-      {currentRole === "Tecnico" && (
-        <Link to="/projectList">
-          <Button className="w-4/12">Seguimiento de Proyectos</Button>
-        </Link>
-      )}
+      {currentRole === "Tecnico" && <TecnicoView />}
       {currentRole === "Jefe" && (
         <>
           <Link to="/projectList">

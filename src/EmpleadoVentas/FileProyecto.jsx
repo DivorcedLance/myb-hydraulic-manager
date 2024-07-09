@@ -24,9 +24,9 @@ export function FileProyecto({ onAddProforma, manualError, fr }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleCancel = () => {
-    fr.setValue("fileName", "");
-    fr.setValue("filedescription", "");
-    fr.setValue("file", null);
+    fr.setValue("fileName", undefined);
+    fr.setValue("filedescription", undefined);
+    fr.setValue("file", undefined);
     setIsDialogOpen(false);
   };
 
@@ -60,7 +60,7 @@ export function FileProyecto({ onAddProforma, manualError, fr }) {
           <DialogTitle>{"Subir proforma"}</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <div className="flex flex-col w-full h-full items-center gap-6">
+        <div className="flex flex-col px-4 w-full gap-2">
           <FormField
             control={fr.control}
             name="fileName"
@@ -72,6 +72,7 @@ export function FileProyecto({ onAddProforma, manualError, fr }) {
               </FormItem>
             )}
           />
+
           <FormField
             control={fr.control}
             name="filedescription"
@@ -83,22 +84,28 @@ export function FileProyecto({ onAddProforma, manualError, fr }) {
               </FormItem>
             )}
           />
-          <Input
-            className={"w-96 h-16 items-center text-lg"}
-            type="file"
-            {...fr.register("file", { required: true })}
-          />
+          <div className="flex justify-center">
+            <Input
+              className={"w-96 h-16 items-center text-lg"}
+              type="file"
+              {...fr.register("file", { required: true })}
+            />
+          </div>
           {fr.formState.errors.file && (
-            <span>{fr.formState.errors.file.message}</span>
+            <div className="flex justify-center">
+              <span className="text-red-600">
+                {fr.formState.errors.file.message}
+              </span>
+            </div>
           )}
           {/* {manualError[2] && (
             <span className="text-red-600">Deba añadir una proforma</span>
           )} */}
 
           <Button type="button" onClick={handleSubirFile}>
-            Confirmar
+            Subir
           </Button>
-          <Button type="button" onClick={handleCancel}>
+          <Button type="button" className="bg-red-900" onClick={handleCancel}>
             Cancelar
           </Button>
         </div>

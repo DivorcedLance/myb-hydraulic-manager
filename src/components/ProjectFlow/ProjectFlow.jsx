@@ -8,10 +8,10 @@ export function ProjectFlow({status = 0}) {
     "Asignando Reparacion",
     "Reparando",
     "Control de Calidad",
-    "Generando informe de Reparación",
+    "Subiendo informe de Reparación",
     "Asignando pintado y embalaje",
     "Pintando y embalando",
-    "Generando informe de ventas",
+    "Subiendo informe de ventas",
     "Terminado"
   ]
 

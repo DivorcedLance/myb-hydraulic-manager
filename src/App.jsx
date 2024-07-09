@@ -11,6 +11,7 @@ import { RegistroProyecto } from "./pages/RegistroProyecto";
 import { TestPage } from "./components/test/TestPage";
 import { CloseProjectListPage } from "./pages/CloseProjectListPage";
 import VisualizarRepPendPage from "./pages/VisualizarRepPendPage";
+import { TecnicoLibrePage } from "./pages/TecnicoLibrePage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
           <Route path="/closeProject" element={<CloseProjectListPage />} />
           <Route path="/visualizarRepuestos" element={<VisualizarRepPendPage />} />
+          <Route path="/tecnicoLibre" element={<TecnicoLibrePage />} />
           <Route path="/test" element={<TestPage />} />
         </Routes>
       </BrowserRouter>

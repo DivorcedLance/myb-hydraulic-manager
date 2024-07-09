@@ -47,8 +47,6 @@ export function FormRegistro({ fr }) {
           )}
         />
       </div>
-
-      
     </div>
   );
 }

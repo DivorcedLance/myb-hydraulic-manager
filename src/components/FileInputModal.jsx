@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,13 +7,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import { useState } from 'react'
-import { FormFile } from './FormFile'
-import uploadIcon from '@/assets/upload-icon.svg'
+} from "@/components/ui/dialog";
+import { useState } from "react";
+import { FormFile } from "./FormFile";
+import uploadIcon from "@/assets/upload-icon.svg";
 
-export function FileInputModal({ fileName = 'Archivo' }) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
+export function FileInputModal({ fileName = "Archivo" }) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -29,10 +29,10 @@ export function FileInputModal({ fileName = 'Archivo' }) {
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className="flex flex-col w-full h-full items-center gap-6">
-          <FormFile />
+          <FormFile onCancel={() => setIsDialogOpen(false)} />
         </div>
         <DialogFooter></DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

@@ -45,7 +45,9 @@ const formSchema = z.object({
     message: "El nombre del archivo es requerido",
   }),
   description: z.string().optional(),
-  file: z.any(),
+  file: z.any().refine((file) => file.length > 0, {
+    message: "El archivo es requerido",
+  }),
 });
 
 const manualEvaluation = (added, descripcion, proforma, modError) => {
@@ -84,14 +86,6 @@ export function RegistroProyecto() {
 
   const form = useForm({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      nombre: "",
-      nroDocumento: "",
-      ruc: "",
-      fileName: "",
-      file: null,
-      filedescription: "",
-    },
   });
 
   const modError = (index, value) => {
