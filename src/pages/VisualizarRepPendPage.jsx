@@ -53,7 +53,7 @@ const reps = [
 export default function VisualizarRepPendPage() {
   const [repuestos, setRepuestos] = useState(reps);
   const [selected, setSelected] = useState(
-    reps.map((e) => {
+    repuestos.map((e) => {
       return {
         id: e.id,
         count: e.count,
@@ -68,6 +68,8 @@ export default function VisualizarRepPendPage() {
   const handleModify = (e) => {
     const id = Number(e.target.id);
     const value = Number(e.target.value);
+    const maxValue = reps.find((item) => item.id === id).quantity;
+    if (value > maxValue) return;
     if (value < 0) return;
     setRepuestos((prev) =>
       prev.map((item) => (item.id === id ? { ...item, quantity: value } : item))
