@@ -13,7 +13,7 @@ export function ProjectView({ project, role }) {
       <ProjectHeader
         project={project}
       />
-      <Button className="w-40" onClick={()=>{navigate("/projectList")}}>Otros Proyectos</Button>
+      {role!=="Tecnico" ?? <Button className="w-40" onClick={()=>{navigate("/projectList")}}>Otros Proyectos</Button>}
       <div className="flex justify-center px-16">
         <ProjectFlow status={project.status} />
       </div>
