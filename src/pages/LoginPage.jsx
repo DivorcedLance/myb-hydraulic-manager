@@ -11,7 +11,7 @@ export function LoginPage() {
     <div className="flex flex-col gap-3">
       <div className="text-2xl font-bold flex items-start">
         <Combobox
-          items={['Empleado', 'Jefe', 'Ventas']}
+          items={['Tecnico', 'Jefe', 'Ventas', 'Logistica']}
           getValue={(r) => r}
           getLabel={(r) => r}
           getRealValue={(r) => r}
@@ -32,6 +32,9 @@ export function LoginPage() {
       </Link>
       <Link to="/closeProject">
         <Button className="w-4/12">Cierre de Proyectos</Button>
+      </Link>
+      <Link to="/visualizarRepuestos">
+        <Button className="w-4/12">Visualización de repuestos pendientes</Button>
       </Link>
     </div>
   )

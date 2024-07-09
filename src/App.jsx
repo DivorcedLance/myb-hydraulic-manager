@@ -10,6 +10,7 @@ import { ProjectListPage } from "./pages/ProjectListPage";
 import { RegistroProyecto } from "./pages/RegistroProyecto";
 import { TestPage } from "./components/test/TestPage";
 import { CloseProjectListPage } from "./pages/CloseProjectListPage";
+import VisualizarRepPendPage from "./pages/VisualizarRepPendPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/recharzarReparacion" element={<RechazarReparacion />} />
           <Route path="/proyeccionRepuestos" element={<ProyeccionRepuestos />} />
           <Route path="/closeProject" element={<CloseProjectListPage />} />
+          <Route path="/visualizarRepuestos" element={<VisualizarRepPendPage />} />
           <Route path="/test" element={<TestPage />} />
         </Routes>
       </BrowserRouter>

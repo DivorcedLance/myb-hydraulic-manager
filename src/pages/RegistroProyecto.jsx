@@ -6,9 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import { FormLabel } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { FormProyecto } from "@/EmpleadoVentas/FormProyecto";
 import { useNavigate } from "react-router-dom";
+import { FileProyecto } from "@/EmpleadoVentas/FileProyecto";
 
 const repuestosDB = [
   {
@@ -41,17 +41,23 @@ const formSchema = z.object({
   ruc: z.string().min(1, {
     message: "El ruc es requerido",
   }),
+  fileName: z.string().min(1, {
+    message: "El nombre del archivo es requerido",
+  }),
+  description: z.string().optional(),
+  file: z.any(),
 });
 
 const manualEvaluation = (added, descripcion, proforma, modError) => {
   if (added.length <= 0) {
     modError(0, true);
   }
+
   if (descripcion === "") {
     modError(1, true);
   }
   if (proforma === null || proforma === "") {
-    modError(2, true);
+    modError(2, false);
   }
 
   return added.length <= 0 || descripcion === "" || proforma === null;
@@ -82,6 +88,9 @@ export function RegistroProyecto() {
       nombre: "",
       nroDocumento: "",
       ruc: "",
+      fileName: "",
+      file: null,
+      filedescription: "",
     },
   });
 
@@ -97,7 +106,13 @@ export function RegistroProyecto() {
     if (manualEvaluation(added, descripcion, proforma, modError)) {
       return;
     }
-
+    if (form.watch("file") === null) {
+      form.setError("file", {
+        type: "manual",
+        message: "Deba añadir una proforma",
+      });
+      return;
+    }
     const data = {
       ...values,
       descripcion,
@@ -157,7 +172,7 @@ export function RegistroProyecto() {
       e.target.value !== ""
     )
       modError(2, false);
-    setProforma(e.target.value);
+    setProforma(e.target.files[0]);
   };
 
   const handleCancelar = () => {
@@ -205,13 +220,22 @@ export function RegistroProyecto() {
             >
               Añadir proforma
             </FormLabel>
-            <div className="h-20 flex justify-center">
-              <Input
+            <div className="h-20 flex flex-col">
+              {/* <Input
                 className={"w-96 h-16 items-center text-lg"}
                 type="file"
                 onChange={handleAddProforma}
               />
               {manualError[2] && (
+                <span className="text-red-600">Deba añadir una proforma</span>
+              )} */}
+              <FileProyecto
+                onAddProforma={handleAddProforma}
+                manualError={manualError}
+                fr={form}
+              />
+              {(form.formState.errors.file ||
+                form.formState.errors.fileName) && (
                 <span className="text-red-600">Deba añadir una proforma</span>
               )}
             </div>
