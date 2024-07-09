@@ -9,21 +9,28 @@ const reps = [
     name: "Llanta",
     descripcion: "Llanta para auto",
     imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
-    count: 4,
+    quantity: 4,
   },
   {
     id: 2,
     name: "Aceite",
     descripcion: "Aceite para motor",
     imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
-    count: 6,
+    quantity: 6,
   },
   {
     id: 3,
     name: "Filtro de aire",
     descripcion: "Filtro de aire para motor",
     imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
-    count: 9,
+    quantity: 9,
+  },
+  {
+    id: 4,
+    name: "Filtro de aire",
+    descripcion: "Filtro de aire para motor",
+    imgSrc: "https://e7.pngegg.com/pngimages/932/804/png-clipart-power-take-off-mack-trucks-spare-part-hydraulic-pump-power-take-off-truck-auto-part.png",
+    quantity: 9,
   },
 ];
 
@@ -31,7 +38,7 @@ export function ProyeccionRepuestos() {
   //Repuestos con la cantidad recomendada por ventas
   const [repuestos, setRepuestos] = useState(reps);
   const [selected, setSelected] = useState(
-    reps.map((e) => {
+    repuestos.map((e) => {
       return {
         id: e.id,
         count: e.count,
@@ -66,6 +73,7 @@ export function ProyeccionRepuestos() {
     console.log("Pedir repuestos");
     const pedidos = repuestos.filter((item) => selected.includes(item.id));
     console.log(pedidos);
+    navigate("/");
   };
 
   const handleCancelar = () => {

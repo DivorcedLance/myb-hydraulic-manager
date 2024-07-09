@@ -49,8 +49,8 @@ const reps = [
 ];
 
 
+//Repuestos con la cantidad recomendada por ventas
 export default function VisualizarRepPendPage() {
-  //Repuestos con la cantidad recomendada por ventas
   const [repuestos, setRepuestos] = useState(reps);
   const [selected, setSelected] = useState(
     reps.map((e) => {

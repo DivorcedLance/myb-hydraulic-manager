@@ -18,6 +18,7 @@ export function LoginPage() {
           onSelection={(r) => {
             setCurrentRole(r);
           }}
+          initialValue = {currentRole}
           itemName={"Rol"}
         />
       </div>

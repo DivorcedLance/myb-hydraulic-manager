@@ -17,9 +17,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function Combobox({ items, getValue, getLabel, getRealValue, itemName, onSelection }) {
+export function Combobox({ items, getValue, getLabel, getRealValue, itemName, onSelection, initialValue=null }) {
   const [open, setOpen] = useState(false)
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState(initialValue)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

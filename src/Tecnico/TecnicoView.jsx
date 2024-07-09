@@ -17,18 +17,18 @@ export default function TecnicoView() {
       <Link
         to="/projectView"
         onClick={() => {
-          setCurrentProjectId(7);
+          setCurrentProjectId(4);
         }}
       >
-        <Button className="w-4/12">Pintado y embalado 1</Button>
+        <Button className="w-4/12">Control de Calidad</Button>
       </Link>
       <Link
         to="/projectView"
         onClick={() => {
-          setCurrentProjectId(4);
+          setCurrentProjectId(7);
         }}
       >
-        <Button className="w-4/12">Pintado y embalado 2</Button>
+        <Button className="w-4/12">Pintado y embalado</Button>
       </Link>
       <Link to="/tecnicoLibre">
         <Button className="w-4/12">Sin tareas</Button>

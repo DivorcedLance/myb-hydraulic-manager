@@ -4,7 +4,10 @@ export function RepuestoSection({ repuestos, onEdit, onSelected, onDelete, selec
 
   return (
     <div className="grid grid-cols-2 overflow-hidden">
-      {repuestos.map((repuesto) => (
+      {repuestos.map((repuesto) => {
+        console.log(repuesto)
+        
+        return (
         <RepuestoCard
           key={repuesto.id}
           onSelected={onSelected}
@@ -13,7 +16,7 @@ export function RepuestoSection({ repuestos, onEdit, onSelected, onDelete, selec
           item={repuesto}
           selected={selected}
         />
-      ))}
+      )})}
   
     </div>
   );
