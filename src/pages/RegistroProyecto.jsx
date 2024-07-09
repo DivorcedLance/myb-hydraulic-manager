@@ -44,25 +44,25 @@ const formSchema = z.object({
   fileName: z.string().min(1, {
     message: "El nombre del archivo es requerido",
   }),
-  description: z.string().optional(),
-  file: z.any().refine((file) => file.length > 0, {
-    message: "El archivo es requerido",
-  }),
+  filedescription: z.string().optional(),
+  file: z.any(),
 });
 
 const manualEvaluation = (added, descripcion, proforma, modError) => {
-  if (added.length <= 0) {
-    modError(0, true);
-  }
+  /* if (added.length <= 0) {
+    modError(0, false);
+  } */
 
   if (descripcion === "") {
     modError(1, true);
   }
-  if (proforma === null || proforma === "") {
+  /* if (proforma === null || proforma === "") {
     modError(2, false);
-  }
+  } */
 
-  return added.length <= 0 || descripcion === "" || proforma === null;
+  return (
+    /* added.length <= 0 ||  */ descripcion === "" /* || proforma === null */
+  );
 };
 
 export function RegistroProyecto() {
@@ -86,6 +86,14 @@ export function RegistroProyecto() {
 
   const form = useForm({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      nombre: "",
+      nroDocumento: "",
+      ruc: "",
+      fileName: "",
+      filedescription: "",
+      file: [],
+    },
   });
 
   const modError = (index, value) => {
@@ -100,13 +108,6 @@ export function RegistroProyecto() {
     if (manualEvaluation(added, descripcion, proforma, modError)) {
       return;
     }
-    if (form.watch("file") === null) {
-      form.setError("file", {
-        type: "manual",
-        message: "Deba añadir una proforma",
-      });
-      return;
-    }
     const data = {
       ...values,
       descripcion,
@@ -115,6 +116,7 @@ export function RegistroProyecto() {
     };
 
     console.log(data);
+    navigate("/");
   };
 
   const onSelected = (id) => {
@@ -239,7 +241,11 @@ export function RegistroProyecto() {
           </div>
         </form>
       </Form>
-      <Button className="w-full mt-2 bg-red-700" onClick={handleCancelar}>
+      <Button
+        className="w-full mt-2 bg-red-700"
+        type="button"
+        onClick={handleCancelar}
+      >
         Cancelar
       </Button>
     </div>

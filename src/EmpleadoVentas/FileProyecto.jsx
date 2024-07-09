@@ -24,9 +24,9 @@ export function FileProyecto({ onAddProforma, manualError, fr }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleCancel = () => {
-    fr.setValue("fileName", undefined);
-    fr.setValue("filedescription", undefined);
-    fr.setValue("file", undefined);
+    fr.setValue("fileName", "");
+    fr.setValue("filedescription", "");
+    fr.setValue("file", []);
     setIsDialogOpen(false);
   };
 
@@ -44,6 +44,7 @@ export function FileProyecto({ onAddProforma, manualError, fr }) {
         message: "Deba añadir una proforma",
       });
     } else {
+      fr.clearErrors();
       setIsDialogOpen(false);
     }
   };

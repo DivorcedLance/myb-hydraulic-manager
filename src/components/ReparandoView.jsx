@@ -16,6 +16,12 @@ import { useState } from "react";
 export function ReparandoView() {
   const { rejected, setRejected } = useRejected();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [pruebas, setPruebas] = useState(
+    "Loperm ipsum dolor sit amet, consectetur adipiscing elit"
+  );
+  const [detalles, setDetalles] = useState(
+    "Loperm ipsum dolor sit amet, consectetur adipiscing elit"
+  );
 
   return (
     <div className="flex flex-col gap-4">
@@ -48,9 +54,11 @@ export function ReparandoView() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="h-full">
                   <h2 className="font-bold">Pruebas Fallidas</h2>
+                  <div className="h-32 overflow-auto">{pruebas}</div>
                 </div>
-                <div className="font-bold">
+                <div className="h-full">
                   <h2 className="font-bold">Detalles/Sugerencias</h2>
+                  <div className="h-32 overflow-auto">{detalles}</div>
                 </div>
               </div>
             </DialogContent>
