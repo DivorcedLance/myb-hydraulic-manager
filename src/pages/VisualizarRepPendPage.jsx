@@ -86,6 +86,7 @@ export default function VisualizarRepPendPage() {
   //Pedir repuestos
   const handleConseguir = () => {
     console.log("Pedir repuestos");
+    navigate("/");
   };
 
   const handleCancelar = () => {

@@ -20,7 +20,15 @@ export default function TecnicoView() {
           setCurrentProjectId(7);
         }}
       >
-        <Button className="w-4/12">Pintado y embalado</Button>
+        <Button className="w-4/12">Pintado y embalado 1</Button>
+      </Link>
+      <Link
+        to="/projectView"
+        onClick={() => {
+          setCurrentProjectId(4);
+        }}
+      >
+        <Button className="w-4/12">Pintado y embalado 2</Button>
       </Link>
       <Link to="/tecnicoLibre">
         <Button className="w-4/12">Sin tareas</Button>
