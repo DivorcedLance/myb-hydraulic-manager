@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Combobox } from "@/components/ComboBox";
-
+import { Resultados } from "@/components/temp/Resultados";
 import { useState } from "react";
 
 export function ReparandoView() {
@@ -51,7 +51,17 @@ export function ReparandoView() {
                 <DialogTitle>Informe de Pruebas Rechazado</DialogTitle>
                 <DialogDescription></DialogDescription>
               </DialogHeader>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="flex flex-col gap-4">
+                <div className="h-96 overflow-y-auto">
+                  <Resultados fail />
+                </div>
+
+                <h2 className="font-bold">Detalles/Sugerencias</h2>
+                <div className="h-32 overflow-auto">{detalles}</div>
+
+              </div>
+
+              {/* <div className="grid grid-cols-2 gap-4">
                 <div className="h-full">
                   <h2 className="font-bold">Pruebas Fallidas</h2>
                   <div className="h-32 overflow-auto">{pruebas}</div>
@@ -60,19 +70,23 @@ export function ReparandoView() {
                   <h2 className="font-bold">Detalles/Sugerencias</h2>
                   <div className="h-32 overflow-auto">{detalles}</div>
                 </div>
-              </div>
+              </div> */}
             </DialogContent>
           </Dialog>
         </div>
       )}
-      <div className="flex justify-around w-full items-center">
-        <div className="flex flex-col">
+      <div className="flex flex-col justify-center items-center gap-4 w-full">
+        <Resultados />
+        <Button className="min-w-36">Registrar Valores</Button>
+      </div>
+      {/*<div className="flex justify-around w-full items-center">
+         <div className="flex flex-col">
           <FileInputModal fileName="Reporte de pruebas" />
         </div>
         <div className="flex flex-col">
           <FileInputModal fileName="Reporte de pruebas de reparación" />
-        </div>
-      </div>
+        </div> 
+      </div>*/}
     </div>
   );
 }

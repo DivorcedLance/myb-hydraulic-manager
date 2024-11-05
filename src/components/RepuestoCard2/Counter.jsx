@@ -1,15 +1,22 @@
+import { forwardRef } from "react";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
-export function Counter({ initValue, onChange, id, ...props }) {
+// Usamos forwardRef para pasar la ref a Input
+export const Counter = forwardRef(({ initValue, className, onChange, id, ...props }, ref) => {
   return (
     <Input
       {...props}
+      ref={ref || null}
       id={id}
       value={initValue}
       onChange={onChange}
       type="number"
       placeholder="0"
-      className="w-12"
+      className={cn("text-center", className || "w-12")}
     />
   );
-}
+});
+
+// Asigna un nombre de display para debugging
+Counter.displayName = "Counter";

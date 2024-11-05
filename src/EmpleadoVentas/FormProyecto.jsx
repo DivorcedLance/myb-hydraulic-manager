@@ -1,22 +1,21 @@
-import { FormLabel } from "@/components/ui/form";
+import { FormLabel, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { TextareaWithLabel } from "@/components/TextAreaWhitLabel";
 import ListaRepuestos from "@/EmpleadoVentas/ListaRepuestos";
 import { StockRepuestos } from "@/EmpleadoVentas/StockRepuestos";
 import { Button } from "@/components/ui/button";
 
 export function FormProyecto({
-  onChange,
-  manualError,
-  added,
+  fr,
   repuestos,
   onDelete,
-  onCantity,
   onAddRepuesto,
   handleAdd,
   onSelected,
   open,
   onClose,
 }) {
+
   return (
     <div className="py-4">
       <h1 className="text-2xl pb-2 text-left font-medium leading-none">
@@ -24,40 +23,55 @@ export function FormProyecto({
       </h1>
       <div className="grid md:grid-cols-2 gap-4 py-1">
         <div>
-          <FormLabel
-            htmlFor="ruc"
-            className={`${manualError[1] && "text-red-600"}`}
-          >
-            Descripcion
-          </FormLabel>
-          <TextareaWithLabel
-            placeholder="Ingrese sus detalles"
-            id="descripcion"
-            onChange={(e) => onChange(e)}
+          <FormField
+            control={fr.control}
+            name="titulo"
+            render={({ field }) => (
+              <FormItem>
+                <FormItem>
+                  <FormLabel htmlFor="titulo">Titulo</FormLabel>
+                  <Input {...field} id="titulo" />
+                  <FormMessage error={fr.formState.errors.titulo} />
+                </FormItem>
+              </FormItem>
+            )}
           />
-          {manualError[1] && (
-            <span className="text-red-600">
-              Deba añadir almenos un a descripcion
-            </span>
-          )}
+          <FormField
+            control={fr.control}
+            name="descripcion"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel htmlFor="descripcion">Descripción</FormLabel>
+                <TextareaWithLabel
+                  placeholder="Ingrese sus detalles"
+                  id="descripcion"
+                  onChange={(e) => field.onChange(e)}
+                />
+                <FormMessage error={fr.formState.errors.descripcion} />
+              </FormItem>
+            )}
+          />
         </div>
         <div>
-          <FormLabel
-            htmlFor="repuestos"
-            className={`${manualError[0] && "text-red-600"}`}
-          >
-            Lista de Repuestos
-          </FormLabel>
-          <ListaRepuestos
-            added={added}
-            onDelete={onDelete}
-            onEdit={onCantity}
+          <FormField
+            control={fr.control}
+            name="repuestos"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel
+                  htmlFor="repuestos"
+                >
+                  Lista de Repuestos
+                </FormLabel>
+                <ListaRepuestos
+                  fields={field.value}
+                  fr={fr}
+                  onDelete={onDelete}
+                />
+                <FormMessage error={fr.formState.errors.repuestos} />
+              </FormItem>
+            )}
           />
-          {manualError[0] && (
-            <span className="text-red-600">
-              Deba añadir al menos un repuesto
-            </span>
-          )}
           <Button className="w-full mt-2" onClick={onAddRepuesto} type="button">
             Añadir
           </Button>

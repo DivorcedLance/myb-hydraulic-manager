@@ -12,16 +12,15 @@ export function StockRepuestos({ stock, onAdd, onSelected, isOpen, onClose }) {
       <div className="overflow-auto" style={{ height: "70vh" }}>
         {stock.map((repuesto) => (
           <CardDemo
-            key={repuesto.id}
+            key={repuesto.repuestoId}
             title={repuesto.name}
             subtitle={repuesto.description}
             image={repuesto.imgSrc}
             imageAlt={repuesto.name}
           >
             <Switch
-              key={repuesto.id}
               onClick={() => {
-                onSelected(repuesto.id);
+                onSelected(repuesto.repuestoId);
               }}
             />
           </CardDemo>

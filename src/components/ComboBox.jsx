@@ -17,7 +17,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function Combobox({ items, getValue, getLabel, getRealValue, itemName, onSelection, initialValue=null }) {
+export function Combobox({ items, getValue, getLabel, getRealValue, itemName, onSelection, initialValue = null }) {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState(initialValue)
 
@@ -37,32 +37,35 @@ export function Combobox({ items, getValue, getLabel, getRealValue, itemName, on
       <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder={`Buscar ${itemName}...`} className="h-9" />
-          <CommandList>
-            <CommandEmpty>No encontrado</CommandEmpty>
-            <CommandGroup>
-              {items.map((item) => (
-                <CommandItem
-                  key={getValue(item)}
-                  value={getValue(item)}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue)
-                    setOpen(false)
-                    if (onSelection) {
-                      onSelection(getRealValue(item))
-                    }
-                  }}
-                >
-                  {getLabel(item)}
-                  <CheckIcon
-                    className={cn(
-                      "ml-auto h-4 w-4",
-                      getValue(value) === getValue(item) ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
+          <div className="overflow-auto sm:max-h-32 md:max-h-48 lg:max-h-64">
+            <CommandList>
+              <CommandEmpty>No encontrado</CommandEmpty>
+              <CommandGroup>
+                {items.map((item) => (
+                  <CommandItem
+                    key={getRealValue(item)}
+                    value={getValue(item)}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue)
+                      setOpen(false)
+                      if (onSelection) {
+                        onSelection(getRealValue(item))
+                      }
+                    }}
+                  >
+                    {getLabel(item)}
+                    <CheckIcon
+                      className={cn(
+                        "ml-auto h-4 w-4",
+                        getValue(value) === getValue(item) ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </CommandList>
+          </div>
+
         </Command>
       </PopoverContent>
     </Popover>

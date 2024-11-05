@@ -20,12 +20,12 @@ export function FileInputModal({ fileName = "Archivo" }) {
       <DialogTrigger asChild>
         <Button variant="outline">
           <img src={uploadIcon} alt="Arrow" className="w-8 h-8 mr-4" />
-          {`Subir ${fileName}`}
+          {`Generar ${fileName}`}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[800px] sm:max-h-[800px] flex flex-col">
         <DialogHeader>
-          <DialogTitle>{`Subir ${fileName}`}</DialogTitle>
+          <DialogTitle>{`Generar ${fileName}`}</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className="flex flex-col w-full h-full items-center gap-6">
